@@ -15,7 +15,6 @@ Insider Trading Alerts is a Python script that scrapes insider trading informati
   - requests
   - beautifulsoup4
   - smtplib (standard library)
-  - dotenv
 
 ## Setup
 
@@ -31,9 +30,9 @@ Insider Trading Alerts is a Python script that scrapes insider trading informati
 
 4. Set up your environment variables:
     Create a .env file in the project directory and add the following:
-    my_email=your_email@gmail.com
-    password=your_email_password
-    send_address=desired_send_email_address
+    - my_email=your_email@gmail.com
+    - password=your_email_password
+    - send_address=desired_send_email_address
 
 5. Run the script:
     python main.py
