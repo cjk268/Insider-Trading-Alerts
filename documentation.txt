@@ -1,0 +1,45 @@
+# CapitolTrades Scraper
+
+CapitolTrades Scraper is a Python script that scrapes insider trading information from [CapitolTrades](https://www.capitoltrades.com/) and sends email alerts based on specified criteria.
+
+## Features
+
+- Fetches insider trades data from CapitolTrades website.
+- Checks specified criteria (recent days, trade size, etc.) to filter relevant trades.
+- Sends email alerts when insider trades meet the criteria.
+
+## Prerequisites
+
+- Python 3
+- Required Python packages (install using `pip install -r requirements.txt`)
+  - requests
+  - beautifulsoup4
+  - smtplib (standard library)
+  - dotenv
+
+## Setup
+
+1. Clone the repository:
+   git clone https://github.com/your-username/CapitolTrades-Scraper.git
+
+2. Navigate to the project directory:
+
+    cd CapitolTrades-Scraper
+
+3. Install the required packages:
+    pip install -r requirements.txt
+
+4. Set up your environment variables:
+    Create a .env file in the project directory and add the following:
+    my_email=your_email@gmail.com
+    password=your_email_password
+    Replace your_email@gmail.com and your_email_password with your Gmail credentials.
+
+4. Run the script:
+    python scraper.py
+
+Usage
+Adjust constants in the script (RECENT, MIN_TRADE_SIZE, etc.) based on your criteria.
+Run the script using the command mentioned in the setup section.
+The script will fetch insider trades, filter them, and send email alerts if criteria are met.
+
