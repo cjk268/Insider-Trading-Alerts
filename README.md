@@ -1,6 +1,6 @@
-# CapitolTrades Scraper
+# Insider Trading Alerts
 
-CapitolTrades Scraper is a Python script that scrapes insider trading information from [CapitolTrades](https://www.capitoltrades.com/) and sends email alerts based on specified criteria.
+Insider Trading Alerts is a Python script that scrapes insider trading information from [CapitolTrades](https://www.capitoltrades.com/) and sends email alerts based on specified criteria.
 
 ## Features
 
@@ -41,6 +41,6 @@ CapitolTrades Scraper is a Python script that scrapes insider trading informatio
 ## Configuration
 Adjust the constants in the script to customize the criteria for insider trades:
 
-RECENT: Maximum number of days considered recent for insider trades.
-MIN_TRADE_SIZE: Minimum trade size desired by the user (in USD).
-MIN_OR_MAX_RANGE: 0/1 variable indicating whether to use the min or max in the range size.
+- RECENT: Maximum number of days considered recent for insider trades.
+- MIN_TRADE_SIZE: Minimum trade size desired by the user (in USD).
+- MIN_OR_MAX_RANGE: 0/1 variable indicating whether to use the min or max in the range size.
