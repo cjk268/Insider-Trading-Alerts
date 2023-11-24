@@ -15,6 +15,7 @@ Insider Trading Alerts is a Python script that scrapes insider trading informati
   - requests
   - beautifulsoup4
   - smtplib (standard library)
+  - dotenv
 
 ## Setup
 
@@ -43,3 +44,6 @@ Adjust the constants in the script to customize the criteria for insider trades:
 - RECENT: Maximum number of days considered recent for insider trades.
 - MIN_TRADE_SIZE: Minimum trade size desired by the user (in USD).
 - MIN_OR_MAX_RANGE: 0/1 variable indicating whether to use the min or max in the range size.
+
+## Usage
+It is recommended to upload the script to the cloud and schedule daily checks using a task manager. Alternatively, you can schedule daily checks on your local device.
