@@ -20,14 +20,18 @@ Insider Trading Alerts is a Python script that scrapes insider trading informati
 ## Setup
 
 1. Clone the repository:
-   git clone https://github.com/cjk268/Insider-Trading-Alerts.git
+```shell
+git clone https://github.com/cjk268/Insider-Trading-Alerts.git
+```
 
 2. Navigate to the project directory:
-
+```shell
     cd Insider-Trading-Alerts
-
+```
 3. Install the required packages:
+```shell
     pip install -r requirements.txt
+```
 
 4. Set up your environment variables:
     Create a .env file in the project directory and add the following:
@@ -36,7 +40,29 @@ Insider Trading Alerts is a Python script that scrapes insider trading informati
     - send_address=desired_send_email_address
 
 5. Run the script:
+```shell
     python main.py
+```
+
+### Docker Setup
+1. Clone the repository: 
+```shell
+git clone https://github.com/cjk268/Insider-Trading-Alerts.git
+```
+
+2. Navigate to the project directory: 
+```shell
+cd Insider-Trading-Alerts
+```
+
+3. Build the Docker image: 
+```shell
+docker build -t insider-trading-alerts .
+```
+4. Run the Docker container: 
+```shell
+docker run -e my_email=your_email@gmail.com -e password=your_email_password -e send_address=desired_send_email_address -p 4000:80 insider-trading-alerts
+```
 
 ## Configuration
 Adjust the constants in the script to customize the criteria for insider trades:
