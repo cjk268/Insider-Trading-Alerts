@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 import os
+import time
 from dotenv import load_dotenv
 import datetime
 
@@ -134,15 +135,26 @@ for trade in trades_table:
                             'trade_ID': trade_ID,
                             'trade_link': trade_link
                         })
-                    
-# If there are filtered trades, send an email
-if filtered_trades:
-    message = compose_email(filtered_trades)
-    connection = smtplib.SMTP("smtp.gmail.com", port=587)
-    connection.starttls()  # Secures and encrypts message
-    connection.login(user=my_email, password=password)
-    connection.sendmail(from_addr=my_email, to_addrs=send_address, msg=message)
-    print("Email sent")
-    connection.close()
-else:
-    print("No trades today matched the criteria")
+
+newest_trade = None
+
+while True:
+    # Your existing code to fetch and filter trades goes here
+
+    # If there are new trades
+    if filtered_trades and (newest_trade is None or filtered_trades[0]['trade_ID'] > newest_trade):
+        newest_trade = filtered_trades[0]['trade_ID']  # Update the newest trade
+
+        # Send an email
+        message = compose_email(filtered_trades)
+        connection = smtplib.SMTP("smtp.gmail.com", port=587)
+        connection.starttls()  # Secures and encrypts message
+        connection.login(user=my_email, password=password)
+        connection.sendmail(from_addr=my_email, to_addrs=send_address, msg=message)
+        print("Email sent")
+        connection.close()
+    else:
+        print("No new trades today matched the criteria")
+
+    # Wait for 24 hours before the next iteration
+    time.sleep(24 * 60 * 60)  # This pauses the loop for 24 hours
